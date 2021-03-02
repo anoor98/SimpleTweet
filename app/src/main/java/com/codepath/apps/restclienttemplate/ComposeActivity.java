@@ -30,7 +30,6 @@ public class ComposeActivity extends AppCompatActivity {
 
     TwitterClient client;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,8 +87,10 @@ public class ComposeActivity extends AppCompatActivity {
                             Log.i(TAG, "Published tweet says: " + tweet);
                             Intent intent = new Intent();
                             intent.putExtra("tweet", Parcels.wrap(tweet));
-                            //set result code and bunfle fata for the response
+
+                            //set result code and bundle data for the response
                             setResult(RESULT_OK, intent);
+
                             //close the activity pass data to parent;
                             finish();
                         } catch (JSONException e) {
